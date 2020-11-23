@@ -4,12 +4,15 @@ import {todos as todosList} from "./todos";
 function App() {
  
 const [todos, setTodos] = useState(todosList)
-
+const [inputText, setInputText] = useState("")
     return (
       <section className="todoapp">
         <header className="header">
           <h1>todos</h1>
-          <input className="new-todo" placeholder="What needs to be done?" autofocus />
+          <input 
+          className="new-todo" 
+          placeholder="What needs to be done?" 
+          autoFocus />
         </header>
         <TodoList todos={Object.values(todos)} />
         <footer className="footer">
@@ -26,7 +29,7 @@ const [todos, setTodos] = useState(todosList)
 function TodoItem(props) {
   
     return (
-      <li className={this.props.completed ? "completed" : ""}>
+      <li className={props.completed ? "completed" : ""}>
         <div className="view">
           <input className="toggle" type="checkbox" checked={props.completed} />
           <label>{props.title}</label>
@@ -40,7 +43,7 @@ function TodoList(props) {
     return (
       <section className="main">
         <ul className="todo-list">
-          {this.props.todos.map((todo) => (
+          {props.todos.map((todo) => (
             <TodoItem title={todo.title} completed={todo.completed} />
           ))}
         </ul>
