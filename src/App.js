@@ -7,7 +7,6 @@ const [todos, setTodos] = useState(todosList)
 const [inputText, setInputText] = useState("")
 
 const handleAddToDo = (event) => {
-console.log(event.which)
 if(event.which === 13) {
   const newId = uuid()
   const newTodo = {
@@ -74,7 +73,7 @@ setTodos(newTodos)
           </span>
           <button 
           className="clear-completed"
-          onlick={() => handleClearCompletedToDos()}
+          onClick={() => handleClearCompletedToDos()}
           >
             Clear completed</button>
         </footer>
