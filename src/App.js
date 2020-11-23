@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import todosList from "./todos.json";
+import {todos} from "./todos";
 
 class App extends Component {
   state = {
-    todos: todosList,
+    todos: todos,
   };
   render() {
     return (
@@ -12,7 +12,7 @@ class App extends Component {
           <h1>todos</h1>
           <input className="new-todo" placeholder="What needs to be done?" autofocus />
         </header>
-        <TodoList todos={this.state.todos} />
+        <TodoList todos={Object.values(this.state.todos)} />
         <footer className="footer">
           <span className="todo-count">
             <strong>0</strong> item(s) left
